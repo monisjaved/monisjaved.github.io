@@ -1,32 +1,45 @@
 {
-  "name": "github-calendar",
-  "version": "1.0.1",
-  "description": "Embed your GitHub contributions calendar anywhere.",
-  "main": "lib/index.js",
-  "directories": {
-    "example": "example"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "browserify lib/index.js -o dist/github-calendar.min.js -s GitHubCalendar && babel dist/github-calendar.min.js | uglifyjs -c -m -o dist/github-calendar.min.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/IonicaBizau/github-calendar.git"
-  },
-  "keywords": [
-    "github",
-    "calendar",
-    "embed"
+  "_args": [
+    [
+      {
+        "raw": "github-calendar",
+        "scope": null,
+        "escapedName": "github-calendar",
+        "name": null,
+        "rawSpec": "github-calendar",
+        "spec": "/Users/moonisjaved/Desktop/Git Repos/monisjaved.github.io/monisjaved.github.io/test/assets/plugins/github-calendar",
+        "type": "directory"
+      },
+      "/Users/moonisjaved/Desktop/Git Repos/monisjaved.github.io/monisjaved.github.io/test/assets/plugins"
+    ]
   ],
-  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/IonicaBizau/github-calendar/issues"
+  "_from": "github-calendar",
+  "_id": "github-calendar@1.0.1",
+  "_inCache": true,
+  "_location": "/github-calendar",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "github-calendar",
+    "scope": null,
+    "escapedName": "github-calendar",
+    "name": null,
+    "rawSpec": "github-calendar",
+    "spec": "/Users/moonisjaved/Desktop/Git Repos/monisjaved.github.io/monisjaved.github.io/test/assets/plugins/github-calendar",
+    "type": "directory"
   },
-  "homepage": "https://github.com/IonicaBizau/github-calendar#readme",
-  "dependencies": {
-    "github-calendar-parser": "^1.0.0"
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:github-calendar",
+  "_shasum": "9054a8d79450f4733333841902444c4d5da83855",
+  "_shrinkwrap": null,
+  "_spec": "github-calendar",
+  "_where": "/Users/moonisjaved/Desktop/Git Repos/monisjaved.github.io/monisjaved.github.io/test/assets/plugins",
+  "author": {
+    "name": "Ionică Bizău",
+    "email": "bizauionica@gmail.com",
+    "url": "http://ionicabizau.net"
   },
   "blah": {
     "example": [
@@ -85,5 +98,37 @@
         "[...and other goodies...](https://github.com/search?q=user%3AIonicaBizau+github)"
       ]
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/github-calendar/issues"
+  },
+  "dependencies": {
+    "github-calendar-parser": "^1.0.0"
+  },
+  "description": "Embed your GitHub contributions calendar anywhere.",
+  "devDependencies": {},
+  "directories": {
+    "example": "example"
+  },
+  "homepage": "https://github.com/IonicaBizau/github-calendar#readme",
+  "keywords": [
+    "github",
+    "calendar",
+    "embed"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "github-calendar",
+  "optionalDependencies": {},
+  "readme": "# github-calendar.js [![Support this project][donate-now]][paypal-donations]\n\nEmbed your GitHub contributions calendar anywhere.\n\nEverybody<sup><sup>well, haters gonna hate</sup></sup> loves GitHub and everybody loves stats. So, why not making the GitHub contributions calendar available for being embeded in your web pages? Now [you can](https://ionicabizau.github.io/github-calendar/example). :tada:\n\n[![](http://i.imgur.com/S1h8XoB.jpg)](https://ionicabizau.github.io/github-calendar/example)\n\n## Installation\n\nCheck out the [`dist`](/dist) directory to download the needed files and include them on your page.\n\n```html\n<!-- Prepare a container for your calendar. -->\n<script\n  src=\"https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js\"\n</script>\n\n<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->\n<link\n  rel=\"stylesheet\"\n  href=\"https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css\"\n/>\n\n<!-- Prepare a container for your calendar. -->\n<div class=\"calendar\">\n    <!-- Loading stuff -->\n    Loading the data just for you.\n</div>\n\n<script>\n    GitHubCalendar(\".calendar\", \"your-username\");\n</script>\n```\n\n[Here](http://jsbin.com/wewihogevu/edit?html,output) you can see this example in action.\n\n## Documentation\n\n### `GitHubCalendar(container, username, options)`\nBrings the contributions calendar from GitHub (provided username) into your page.\n\n#### Params\n- **String|HTMLElement** `container`: The calendar container (query selector or the element itself).\n- **String** `username`: The GitHub username.\n- **Object** `options`: An object containing the following fields:\n - `summary_text` (String): The text that appears under the calendar (defaults to: `\"Summary of\n   pull requests, issues opened, and commits made by <username>\"`).\n - `proxy` (Function): A function that receives as argument an url (string) and should return the proxied url.\n   The default is using [@izuzak](https://github.com/izuzak)'s [`urlreq`](https://github.com/izuzak/urlreq).\n\n#### Return\n- **Promise** A promise returned by the `fetch()` call.\n\n## How to contribute\nHave an idea? Found a bug? See [how to contribute][contributing].\n\n## Thanks\n\n - Big thanks to [**@izuzak**](https://github.com/izuzak) for creating the [urlreq](https://github.com/izuzak/urlreq) project–the default proxy used by this library. :cake:\n - Part of the CSS code was taken from the GitHub profile page to offer the same experience. :art:\n\n## Where is this library used?\nIf you are using this library in one of your projects, add it in this list. :sparkles:\n\n## Related\n\n - [`github-calendar-parser`](https://github.com/IonicaBizau/github-calendar-parser)–Parses the GitHub calendar SVG into JSON.\n - [`github-calendar-legend`](https://github.com/IonicaBizau/github-calendar-legend)–The GitHub contributions calendar colors.\n - [`ghcal`](https://github.com/IonicaBizau/ghcal)–See the GitHub contributions calendar of a user in the command line.\n - [`github-stats`](https://github.com/IonicaBizau/github-stats)–Visualize stats about GitHub users and projects in your terminal.\n - [...and other goodies...](https://github.com/search?q=user%3AIonicaBizau+github)\n\n## License\n\n[MIT][license] © [Ionică Bizău][website]\n\n[paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW\n[donate-now]: http://i.imgur.com/6cMbHOC.png\n\n[license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2016#license-mit\n[website]: http://ionicabizau.net\n[contributing]: /CONTRIBUTING.md\n[docs]: /DOCUMENTATION.md",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/IonicaBizau/github-calendar.git"
+  },
+  "scripts": {
+    "release": "browserify lib/index.js -o dist/github-calendar.min.js -s GitHubCalendar && babel dist/github-calendar.min.js | uglifyjs -c -m -o dist/github-calendar.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.1"
 }
